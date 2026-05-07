@@ -1,0 +1,55 @@
+/* Container for all images */
+.image-container {
+    display: grid;
+    /* Create 4 columns: 3 for the arrow keys and 1 large one for the Hero */
+    grid-template-columns: repeat(3, 50px) 1fr; 
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Individual Arrow Key Styling */
+.image-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Position G1 (Top Arrow) */
+.image-container img:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Position G2 (Left Arrow) */
+.image-container img:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Position G3 (Bottom Arrow) */
+.image-container img:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Position G4 (Right Arrow) */
+.image-container img:nth-of-type(4) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* The Big Photo (Hero/Rafiki) */
+.image-container img:nth-of-type(5) {
+    grid-column: 4;
+    grid-row: 1 / span 2; /* Spans both rows */
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-left: 30px;
+}
+
+/* Hide any extra images not part of the layout */
+.image-container img:nth-of-type(n+6) {
+    display: none;
+}
